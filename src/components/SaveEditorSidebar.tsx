@@ -83,26 +83,28 @@ export function SaveEditorSidebar({
   };
 
   return (
-    <div className="w-full h-full flex flex-col silksong-sidebar border-r border-sidebar-border overflow-hidden backdrop-blur-sm glow-border">
-      {/* Header with Language Selector */}
+    <div className="w-full h-full flex flex-col bg-sidebar border-r border-sidebar-border overflow-hidden backdrop-blur-sm glow-border">
+      {/* Header with Logo */}
       <div className="p-4 border-b border-sidebar-border flex-shrink-0 backdrop-blur-md">
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold silksong-title drop-shadow-lg">
-              {t('app.title')}
-            </h1>
-            <LanguageSelector />
+        <div className="space-y-3">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img 
+              src="/silksong-save-editor-logo.png" 
+              alt="Silksong Save Editor" 
+              className="h-28 w-auto object-contain drop-shadow-lg"
+            />
           </div>
-          <p className="text-sm text-muted-foreground drop-shadow">
-            {t('app.subtitle')}
-          </p>
           
-          {/* Status Badge */}
-          <div className="flex items-center gap-2">
-            {getStatusIcon()}
-            <Badge variant={status === 'error' ? 'destructive' : status === 'success' ? 'default' : 'secondary'}>
-              {getStatusText()}
-            </Badge>
+          {/* Controls Row */}
+          <div className="flex items-center justify-between gap-2">
+            <LanguageSelector />
+            <div className="flex items-center gap-2">
+              {getStatusIcon()}
+              <Badge variant={status === 'error' ? 'destructive' : status === 'success' ? 'default' : 'secondary'}>
+                {getStatusText()}
+              </Badge>
+            </div>
           </div>
         </div>
       </div>

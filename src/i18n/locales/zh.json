@@ -36,7 +36,7 @@
   },
   "download": {
     "button": "下载存档",
-    "filename": "user1_modified.dat",
+    "filename": "modified.dat",
     "success": "存档文件下载成功！",
     "error": "生成存档文件失败，请检查您的修改。"
   },
@@ -57,7 +57,7 @@
     "usage": {
       "title": "使用方法",
       "step1": "1. 使用上述路径找到您的存档文件",
-      "step2": "2. 使用上传按钮上传 user1.dat 文件",
+      "step2": "2. 使用上传按钮上传 .dat 文件",
       "step3": "3. 在 Monaco 编辑器中编辑 JSON 数据",
       "step4": "4. 下载修改后的存档文件",
       "step5": "5. 替换原始文件（建议先备份）"
@@ -72,7 +72,7 @@
   },
   "upload": {
     "title": "上传丝之歌存档文件",
-    "description": "点击这里或拖拽你的 user1.dat 文件到此处开始编辑",
+    "description": "点击这里或拖拽你的 .dat 文件到此处开始编辑",
     "dropHere": "释放以上传你的存档文件",
     "button": "选择存档文件", 
     "formatNote": "仅支持 .dat 格式文件",

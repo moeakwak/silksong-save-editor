@@ -1,6 +1,6 @@
 # Silksong Save Editor
 
-A save file editor for Hollow Knight: Silksong with an intuitive json editor interface. Decode, modify, and encode save files with ease.
+A simple save file editor for Hollow Knight: Silksong with an intuitive json editor interface. Decode, modify, and encode save files with ease.
 
 ## 🎮 Demo
 

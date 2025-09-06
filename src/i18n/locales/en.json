@@ -29,7 +29,7 @@
   },
   "upload": {
     "title": "Upload Silksong Save File",
-    "description": "Click here or drag and drop your user1.dat file to start editing",
+    "description": "Click here or drag and drop your .dat file to start editing",
     "dropHere": "Release to upload your save file",
     "button": "Select Save File",
     "formatNote": "Supports .dat files only",
@@ -40,7 +40,7 @@
   },
   "download": {
     "button": "Download Save",
-    "filename": "user1_modified.dat",
+    "filename": "modified.dat",
     "success": "Save file downloaded successfully!",
     "error": "Failed to generate save file. Please check your modifications."
   },
@@ -61,7 +61,7 @@
     "usage": {
       "title": "How to Use",
       "step1": "1. Locate your save file using the paths above",
-      "step2": "2. Upload the user1.dat file using the upload button",
+      "step2": "2. Upload the dat file using the upload button",
       "step3": "3. Edit the JSON data in the Monaco editor",
       "step4": "4. Download the modified save file",
       "step5": "5. Replace the original file (backup recommended)"
