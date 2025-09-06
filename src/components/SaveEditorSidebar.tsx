@@ -24,7 +24,9 @@ interface SaveEditorSidebarProps {
   onUpload: (file: File) => void;
   onDownload: () => void;
   onClear: () => void;
+  onReset: () => void;
   hasData: boolean;
+  hasChanges: boolean;
   isValidJson: boolean;
   status: 'idle' | 'loading' | 'success' | 'error';
   saveData: any;
@@ -35,7 +37,9 @@ export function SaveEditorSidebar({
   onUpload,
   onDownload,
   onClear,
+  onReset,
   hasData,
+  hasChanges,
   isValidJson,
   status,
   saveData,
@@ -149,6 +153,20 @@ export function SaveEditorSidebar({
               </Button>
             )}
 
+            {/* Reset Button - Only show when data exists and has changes */}
+            {hasData && hasChanges && (
+              <Button
+                onClick={onReset}
+                variant="secondary"
+                size="sm"
+                className="w-full"
+                disabled={status === 'loading'}
+              >
+                <AlertCircle className="h-4 w-4" />
+                {t('sidebar.reset')}
+              </Button>
+            )}
+
             {/* Download Button - Only show when data exists */}
             {hasData && (
               <Button
@@ -162,6 +180,12 @@ export function SaveEditorSidebar({
                 {t('sidebar.download')}
               </Button>
             )}
+          </div>
+          
+          {/* Backup Warning */}
+          <div className="mt-4 p-2 bg-warning/10 border border-warning/20 rounded text-xs text-warning">
+            <p className="font-medium mb-1">⚠️ {t('sidebar.backupWarning.title')}</p>
+            <p>{t('sidebar.backupWarning.message')}</p>
           </div>
         </div>
 

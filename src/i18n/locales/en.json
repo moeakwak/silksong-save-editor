@@ -8,10 +8,18 @@
     "upload": "Upload Save File",
     "download": "Download Modified Save",
     "clear": "Clear Editor",
+    "reset": "Reset to Original",
     "language": "Language",
     "help": "Help & Guide",
     "saveLocations": "Save File Locations",
-    "quickActions": "Quick Actions"
+    "quickActions": "Quick Actions",
+    "clearSuccess": "Editor cleared successfully",
+    "resetSuccess": "Reset to original save data",
+    "resetError": "Failed to reset save data",
+    "backupWarning": {
+      "title": "Important Warning",
+      "message": "Always backup your original save file before making any modifications!"
+    }
   },
   "quickActions": {
     "rosaryBeads": "Rosary Beads",

@@ -12,6 +12,7 @@ export function SaveEditor() {
   
   const [saveData, setSaveData] = useState<any>(null);
   const [jsonContent, setJsonContent] = useState<string>('');
+  const [originalJsonContent, setOriginalJsonContent] = useState<string>(''); // Store original content
   const [isValidJson, setIsValidJson] = useState<boolean>(true);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -21,9 +22,11 @@ export function SaveEditor() {
     try {
       const arrayBuffer = await file.arrayBuffer();
       const decoded = decodeSilksongSave(arrayBuffer);
+      const jsonString = JSON.stringify(decoded, null, 2);
       
       setSaveData(decoded);
-      setJsonContent(JSON.stringify(decoded, null, 2));
+      setJsonContent(jsonString);
+      setOriginalJsonContent(jsonString); // Store original content
       setStatus('success');
       
       toast({
@@ -84,15 +87,40 @@ export function SaveEditor() {
   const handleClear = useCallback(() => {
     setSaveData(null);
     setJsonContent('');
+    setOriginalJsonContent(''); // Clear original content
     setIsValidJson(true);
     setStatus('idle');
     
     toast({
       title: t('status.success'),
-      description: 'Editor cleared',
+      description: t('sidebar.clearSuccess'),
       variant: 'default'
     });
   }, [toast, t]);
+
+  const handleReset = useCallback(() => {
+    if (originalJsonContent) {
+      try {
+        const originalData = JSON.parse(originalJsonContent);
+        setSaveData(originalData);
+        setJsonContent(originalJsonContent);
+        setIsValidJson(true);
+        
+        toast({
+          title: t('status.success'),
+          description: t('sidebar.resetSuccess'),
+          variant: 'default'
+        });
+      } catch (error) {
+        console.error('Reset error:', error);
+        toast({
+          title: t('status.error'),
+          description: t('sidebar.resetError'),
+          variant: 'destructive'
+        });
+      }
+    }
+  }, [originalJsonContent, t, toast]);
 
   const handleJsonChange = useCallback((newContent: string) => {
     setJsonContent(newContent);
@@ -140,7 +168,9 @@ export function SaveEditor() {
           onUpload={handleFileUpload}
           onDownload={handleDownload}
           onClear={handleClear}
+          onReset={handleReset}
           hasData={!!saveData}
+          hasChanges={jsonContent !== originalJsonContent && !!originalJsonContent}
           isValidJson={isValidJson}
           status={status}
           saveData={saveData}

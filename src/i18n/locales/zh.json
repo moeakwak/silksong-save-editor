@@ -8,10 +8,18 @@
     "upload": "上传存档文件",
     "download": "下载修改后的存档",
     "clear": "清除编辑器",
+    "reset": "重置到原始状态",
     "language": "语言",
     "help": "帮助与指南",
     "saveLocations": "存档文件位置",
-    "quickActions": "快捷操作"
+    "quickActions": "快捷操作",
+    "clearSuccess": "编辑器已成功清除",
+    "resetSuccess": "已重置到原始存档数据",
+    "resetError": "重置存档数据失败",
+    "backupWarning": {
+      "title": "重要警告",
+      "message": "在进行任何修改之前，请务必备份您的原始存档文件！"
+    }
   },
   "quickActions": {
     "rosaryBeads": "念珠数量",
