@@ -132,9 +132,9 @@ export function SaveEditor() {
   }, [jsonContent]);
 
   return (
-    <div className="h-screen w-screen flex bg-background">
+    <div className="h-screen w-full flex bg-background overflow-hidden">
       {/* Sidebar - 1/4 width */}
-      <div className="w-1/4 min-w-[320px] max-w-[400px]">
+      <div className="w-1/4 min-w-[320px] max-w-[400px] h-full border-r border-border overflow-hidden">
         <SaveEditorSidebar
           onUpload={handleFileUpload}
           onDownload={handleDownload}
@@ -148,14 +148,12 @@ export function SaveEditor() {
       </div>
 
       {/* Monaco Editor - 3/4 width */}
-      <div className="flex-1 p-4">
-        <div className="h-full">
-          <MonacoEditor
-            value={jsonContent}
-            onChange={handleJsonChange}
-            onValidationChange={handleValidationChange}
-          />
-        </div>
+      <div className="flex-1 h-full overflow-hidden">
+        <MonacoEditor
+          value={jsonContent}
+          onChange={handleJsonChange}
+          onValidationChange={handleValidationChange}
+        />
       </div>
     </div>
   );

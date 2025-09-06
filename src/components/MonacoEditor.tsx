@@ -81,9 +81,9 @@ export function MonacoEditor({ value, onChange, onValidationChange }: MonacoEdit
   };
 
   return (
-    <div className="h-full w-full bg-editor-background border border-editor-border rounded-lg overflow-hidden">
+    <div className="h-full w-full bg-editor-background border border-editor-border rounded-lg overflow-hidden m-4">
       <Editor
-        height="100%"
+        height="calc(100vh - 2rem)"
         language="json"
         value={value}
         onChange={handleEditorChange}
