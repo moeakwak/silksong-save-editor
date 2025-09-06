@@ -83,17 +83,17 @@ export function SaveEditorSidebar({
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-sidebar-background/95 border-r border-sidebar-border overflow-hidden backdrop-blur-sm glow-border">
+    <div className="w-full h-full flex flex-col silksong-sidebar border-r border-sidebar-border overflow-hidden backdrop-blur-sm glow-border">
       {/* Header with Language Selector */}
-      <div className="p-4 border-b border-sidebar-border flex-shrink-0 bg-sidebar-background/50 backdrop-blur-sm">
+      <div className="p-4 border-b border-sidebar-border flex-shrink-0 bg-sidebar-background/70 backdrop-blur-md">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold silksong-title">
+            <h1 className="text-xl font-bold silksong-title drop-shadow-lg">
               {t('app.title')}
             </h1>
             <LanguageSelector />
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground drop-shadow">
             {t('app.subtitle')}
           </p>
           
@@ -108,7 +108,7 @@ export function SaveEditorSidebar({
       </div>
 
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-6">
+      <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-sidebar-background/60 backdrop-blur-md">
         {/* File Operations */}
         <div className="pb-4 border-b border-border">
           <h3 className="text-sm font-medium flex items-center gap-2 mb-3">
