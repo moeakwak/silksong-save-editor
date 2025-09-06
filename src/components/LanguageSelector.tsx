@@ -13,8 +13,8 @@ export function LanguageSelector() {
   const { i18n } = useTranslation();
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' }
+    { code: 'en', name: 'English', shortName: 'EN' },
+    { code: 'zh', name: '中文', shortName: '中文' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
@@ -28,7 +28,7 @@ export function LanguageSelector() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="h-8 px-2 gap-1">
           <Globe className="h-4 w-4" />
-          <span className="text-xs">{currentLanguage.flag}</span>
+          <span className="text-xs font-medium">{currentLanguage.shortName}</span>
           <ChevronDown className="h-3 w-3" />
         </Button>
       </DropdownMenuTrigger>
@@ -42,7 +42,7 @@ export function LanguageSelector() {
             onClick={() => handleLanguageChange(language.code)}
             className="flex items-center gap-2 cursor-pointer hover:bg-accent"
           >
-            <span className="text-sm">{language.flag}</span>
+            <span className="text-sm font-medium">{language.shortName}</span>
             <span className="text-sm">{language.name}</span>
             {i18n.language === language.code && (
               <Check className="h-3 w-3 ml-auto text-primary" />
