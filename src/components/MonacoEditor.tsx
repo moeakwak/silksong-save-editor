@@ -14,16 +14,8 @@ export function MonacoEditor({ value, onChange, onValidationChange }: MonacoEdit
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Detect dark mode
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsDarkMode(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    // Force dark mode for Silksong theme
+    setIsDarkMode(true);
   }, []);
 
   const handleEditorDidMount = (editor: any) => {
@@ -81,14 +73,14 @@ export function MonacoEditor({ value, onChange, onValidationChange }: MonacoEdit
   };
 
   return (
-    <div className="h-full w-full bg-editor-background border border-editor-border rounded-lg overflow-hidden m-4">
+    <div className="h-full w-full bg-editor-background/95 border border-editor-border rounded-lg overflow-hidden m-4 glow-border backdrop-blur-sm">
       <Editor
         height="calc(100vh - 2rem)"
         language="json"
         value={value}
         onChange={handleEditorChange}
         onMount={handleEditorDidMount}
-        theme={isDarkMode ? 'vs-dark' : 'light'}
+        theme="vs-dark"
         options={{
           automaticLayout: true,
           scrollBeyondLastLine: false,
@@ -126,7 +118,7 @@ export function MonacoEditor({ value, onChange, onValidationChange }: MonacoEdit
         loading={
           <div className="flex items-center justify-center h-full text-muted-foreground">
             <div className="flex flex-col items-center gap-4">
-              <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent" />
+              <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent glow-primary" />
               <span>{t('status.loading')}...</span>
             </div>
           </div>

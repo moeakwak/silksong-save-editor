@@ -57,13 +57,13 @@ export function UploadZone({ onFileUpload, status }: UploadZoneProps) {
   const isLoading = status === 'loading';
 
   return (
-    <div className="h-full w-full flex items-center justify-center p-8">
+    <div className="h-full w-full flex items-center justify-center p-8 bg-background/30 backdrop-blur-sm">
       <Card 
         className={`
-          w-full max-w-2xl h-96 border-2 border-dashed transition-all duration-300 cursor-pointer
+          w-full max-w-2xl h-96 border-2 border-dashed transition-all duration-300 cursor-pointer backdrop-blur-sm
           ${isDragging 
-            ? 'border-primary bg-primary/5 scale-105' 
-            : 'border-border hover:border-primary/50 hover:bg-muted/50'
+            ? 'border-primary bg-primary/10 scale-105 glow-primary' 
+            : 'border-border hover:border-primary/50 hover:bg-muted/30 glow-border'
           }
           ${isLoading ? 'pointer-events-none opacity-50' : ''}
         `}
@@ -79,8 +79,8 @@ export function UploadZone({ onFileUpload, status }: UploadZoneProps) {
           <div className={`
             p-6 rounded-full transition-all duration-300
             ${isDragging 
-              ? 'bg-primary text-primary-foreground scale-110' 
-              : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary'
+              ? 'bg-primary text-primary-foreground scale-110 glow-primary' 
+              : 'bg-muted/50 text-muted-foreground hover:bg-primary/20 hover:text-primary'
             }
           `}>
             {isLoading ? (
@@ -94,7 +94,7 @@ export function UploadZone({ onFileUpload, status }: UploadZoneProps) {
 
           {/* Main Text */}
           <div className="text-center space-y-2">
-            <h3 className="text-xl font-semibold text-foreground">
+            <h3 className="text-xl font-semibold text-foreground silksong-title">
               {isLoading ? t('upload.loading') : t('upload.title')}
             </h3>
             <p className="text-muted-foreground max-w-md">
@@ -112,7 +112,7 @@ export function UploadZone({ onFileUpload, status }: UploadZoneProps) {
             <Button 
               variant="outline" 
               size="lg" 
-              className="gap-2 hover:bg-primary hover:text-primary-foreground"
+              className="gap-2 hover:bg-primary hover:text-primary-foreground glow-border"
               asChild
             >
               <span>

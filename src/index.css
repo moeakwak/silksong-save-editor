@@ -2,128 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Silksong Save Editor Design System - Modern Dark Theme for Development Tools */
+/* Silksong Dark Theme - Haunted Kingdom Design System */
 
 @layer base {
   :root {
-    /* Modern Light Theme */
-    --background: 0 0% 99%;
-    --foreground: 240 10% 9%;
+    /* Silksong Dark Theme - Primary Colors */
+    --background: 216 15% 8%;
+    --foreground: 210 40% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 9%;
+    --card: 216 20% 10%;
+    --card-foreground: 210 35% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 9%;
+    --popover: 216 20% 10%;
+    --popover-foreground: 210 35% 90%;
 
-    /* Silksong-inspired purple accent */
-    --primary: 270 91% 65%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 270 100% 85%;
+    /* Silksong Purple & Pink Accents */
+    --primary: 285 85% 70%;
+    --primary-foreground: 216 15% 8%;
+    --primary-glow: 295 100% 80%;
+    --primary-dark: 275 70% 45%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
+    --secondary: 216 12% 15%;
+    --secondary-foreground: 210 30% 85%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 216 12% 12%;
+    --muted-foreground: 210 20% 60%;
 
-    --accent: 270 20% 95%;
-    --accent-foreground: 270 91% 45%;
+    --accent: 285 30% 20%;
+    --accent-foreground: 285 85% 70%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    /* Silksong Themed Colors */
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 216 15% 8%;
 
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
+    --success: 142 76% 50%;
+    --success-foreground: 216 15% 8%;
 
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 98%;
+    --warning: 38 92% 65%;
+    --warning-foreground: 216 15% 8%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 270 91% 65%;
+    --border: 216 25% 18%;
+    --input: 216 25% 18%;
+    --ring: 285 85% 70%;
 
-    /* Editor theme */
-    --editor-background: 0 0% 98%;
-    --editor-border: 240 6% 88%;
+    /* Editor theme - Dark Silksong */
+    --editor-background: 216 20% 6%;
+    --editor-border: 216 30% 20%;
 
-    /* Custom gradients and effects */
+    /* Enhanced Silksong gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(240 5% 97%));
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.1);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(216 18% 10%));
+    --gradient-hero: linear-gradient(135deg, 
+      hsla(285, 85%, 70%, 0.1) 0%, 
+      hsla(295, 100%, 80%, 0.05) 50%, 
+      transparent 100%);
+    
+    /* Silksong Shadow Effects */
+    --shadow-elegant: 0 20px 40px -20px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.2);
+    --shadow-silksong: 0 0 80px hsl(285 85% 70% / 0.15);
 
     --radius: 0.75rem;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Sidebar */
-    --sidebar-background: 240 8% 95%;
-    --sidebar-foreground: 240 6% 20%;
-    --sidebar-primary: 270 91% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 5% 92%;
-    --sidebar-accent-foreground: 240 6% 15%;
-    --sidebar-border: 240 6% 88%;
-    --sidebar-ring: 270 91% 65%;
+    /* Silksong Sidebar */
+    --sidebar-background: 216 18% 9%;
+    --sidebar-foreground: 210 30% 85%;
+    --sidebar-primary: 285 85% 70%;
+    --sidebar-primary-foreground: 216 15% 8%;
+    --sidebar-accent: 216 15% 14%;
+    --sidebar-accent-foreground: 210 30% 85%;
+    --sidebar-border: 216 25% 18%;
+    --sidebar-ring: 285 85% 70%;
   }
 
   .dark {
-    /* Professional Dark Theme for Development */
-    --background: 240 10% 4%;
-    --foreground: 240 5% 96%;
-
-    --card: 240 8% 6%;
-    --card-foreground: 240 5% 96%;
-
-    --popover: 240 8% 6%;
-    --popover-foreground: 240 5% 96%;
-
-    /* Enhanced Silksong purple for dark mode */
-    --primary: 270 91% 70%;
-    --primary-foreground: 240 10% 4%;
-    --primary-glow: 270 100% 80%;
-
-    --secondary: 240 4% 12%;
-    --secondary-foreground: 240 5% 90%;
-
-    --muted: 240 4% 12%;
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 240 4% 15%;
-    --accent-foreground: 270 91% 70%;
-
-    --destructive: 0 76% 65%;
-    --destructive-foreground: 240 10% 4%;
-
-    --success: 142 76% 50%;
-    --success-foreground: 240 10% 4%;
-
-    --warning: 38 92% 65%;
-    --warning-foreground: 240 10% 4%;
-
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
-    --ring: 270 91% 70%;
-
-    /* Editor theme - VS Code Dark+ inspired */
-    --editor-background: 240 8% 8%;
-    --editor-border: 240 4% 18%;
-
-    /* Enhanced dark gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(240 8% 6%));
-    --shadow-elegant: 0 20px 40px -20px hsl(var(--primary) / 0.4);
-    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.2);
-
-    /* Dark sidebar */
-    --sidebar-background: 240 8% 6%;
-    --sidebar-foreground: 240 5% 85%;
-    --sidebar-primary: 270 91% 70%;
-    --sidebar-primary-foreground: 240 10% 4%;
-    --sidebar-accent: 240 4% 12%;
-    --sidebar-accent-foreground: 240 5% 90%;
-    --sidebar-border: 240 4% 15%;
-    --sidebar-ring: 270 91% 70%;
+    /* Ensure dark theme consistency */
+    --background: 216 15% 8%;
+    --foreground: 210 40% 95%;
   }
 }
 
@@ -135,14 +91,62 @@
   html, body {
     height: 100%;
     overflow: hidden;
+    background: hsl(var(--background));
   }
 
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      url('/src/assets/silksong-hero.png'),
+      var(--gradient-hero);
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   #root {
     height: 100vh;
     overflow: hidden;
+    background: hsla(var(--background), 0.85);
+    backdrop-filter: blur(1px);
+  }
+
+  /* Silksong Typography */
+  .silksong-title {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+
+  /* Glowing Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-border {
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.7);
   }
 }

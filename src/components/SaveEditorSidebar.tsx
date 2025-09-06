@@ -83,12 +83,12 @@ export function SaveEditorSidebar({
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-gradient-bg border-r border-sidebar-border overflow-hidden">
+    <div className="w-full h-full flex flex-col bg-sidebar-background/95 border-r border-sidebar-border overflow-hidden backdrop-blur-sm glow-border">
       {/* Header with Language Selector */}
-      <div className="p-4 border-b border-sidebar-border flex-shrink-0">
+      <div className="p-4 border-b border-sidebar-border flex-shrink-0 bg-sidebar-background/50 backdrop-blur-sm">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold silksong-title">
               {t('app.title')}
             </h1>
             <LanguageSelector />
