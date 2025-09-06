@@ -115,7 +115,7 @@
         hsla(var(--sidebar-background), 0.85) 70%,
         hsla(var(--sidebar-background), 0.7) 100%
       ),
-      url('/silksong-sidebar.jpg');
+      url('https://m.media-amazon.com/images/M/MV5BNjcwOWVlMmEtMGI3My00YmJhLThiNDYtODlmYTVlNGU5ZjljXkEyXkFqcGc@._V1_.jpg');
     background-size: contain, contain;
     background-position: center top, center bottom;
     background-repeat: no-repeat;
