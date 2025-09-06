@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Silksong Save Editor",
+    "subtitle": "A professional save file editor for Hollow Knight: Silksong"
+  },
+  "sidebar": {
+    "fileOperations": "File Operations",
+    "upload": "Upload Save File",
+    "download": "Download Modified Save",
+    "clear": "Clear Editor",
+    "language": "Language",
+    "help": "Help & Guide",
+    "saveLocations": "Save File Locations"
+  },
+  "upload": {
+    "button": "Choose Save File",
+    "dropzone": "Drop your save file here or click to browse",
+    "processing": "Processing file...",
+    "success": "Save file loaded successfully!",
+    "error": "Failed to load save file. Please check the file format."
+  },
+  "download": {
+    "button": "Download Save",
+    "filename": "user1_modified.dat",
+    "success": "Save file downloaded successfully!",
+    "error": "Failed to generate save file. Please check your modifications."
+  },
+  "editor": {
+    "placeholder": "Upload a save file to start editing...",
+    "validating": "Validating JSON...",
+    "valid": "Valid JSON",
+    "invalid": "Invalid JSON - please fix syntax errors before downloading"
+  },
+  "help": {
+    "locations": {
+      "title": "Save File Locations",
+      "macos": "macOS",
+      "windows": "Windows",
+      "linux": "Linux",
+      "note": "Note: Replace {SteamID} with your actual Steam ID number"
+    },
+    "usage": {
+      "title": "How to Use",
+      "step1": "1. Locate your save file using the paths above",
+      "step2": "2. Upload the user1.dat file using the upload button",
+      "step3": "3. Edit the JSON data in the Monaco editor",
+      "step4": "4. Download the modified save file",
+      "step5": "5. Replace the original file (backup recommended)"
+    },
+    "tips": {
+      "title": "Tips & Warnings",
+      "backup": "Always backup your original save file before making changes",
+      "test": "Test modifications on a copy first",
+      "verified": "Verified field: 'playerData.geo' (Rosary Beads count)",
+      "syntax": "Ensure JSON syntax is valid before downloading"
+    }
+  },
+  "status": {
+    "ready": "Ready",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "errors": {
+    "fileRead": "Could not read file",
+    "decode": "Failed to decode save file",
+    "encode": "Failed to encode save file",
+    "invalidJson": "Invalid JSON format",
+    "generic": "An error occurred"
+  }
+}

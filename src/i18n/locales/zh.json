@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "丝之歌存档编辑器",
+    "subtitle": "专业的《空洞骑士：丝之歌》存档文件编辑工具"
+  },
+  "sidebar": {
+    "fileOperations": "文件操作",
+    "upload": "上传存档文件",
+    "download": "下载修改后的存档",
+    "clear": "清除编辑器",
+    "language": "语言",
+    "help": "帮助与指南",
+    "saveLocations": "存档文件位置"
+  },
+  "upload": {
+    "button": "选择存档文件",
+    "dropzone": "将存档文件拖放到此处或点击浏览",
+    "processing": "正在处理文件...",
+    "success": "存档文件加载成功！",
+    "error": "加载存档文件失败，请检查文件格式。"
+  },
+  "download": {
+    "button": "下载存档",
+    "filename": "user1_modified.dat",
+    "success": "存档文件下载成功！",
+    "error": "生成存档文件失败，请检查您的修改。"
+  },
+  "editor": {
+    "placeholder": "上传存档文件开始编辑...",
+    "validating": "验证 JSON 格式...",
+    "valid": "JSON 格式有效",
+    "invalid": "JSON 格式无效 - 请在下载前修复语法错误"
+  },
+  "help": {
+    "locations": {
+      "title": "存档文件位置",
+      "macos": "macOS 系统",
+      "windows": "Windows 系统",
+      "linux": "Linux 系统",
+      "note": "注意：将 {SteamID} 替换为您的实际 Steam ID 号码"
+    },
+    "usage": {
+      "title": "使用方法",
+      "step1": "1. 使用上述路径找到您的存档文件",
+      "step2": "2. 使用上传按钮上传 user1.dat 文件",
+      "step3": "3. 在 Monaco 编辑器中编辑 JSON 数据",
+      "step4": "4. 下载修改后的存档文件",
+      "step5": "5. 替换原始文件（建议先备份）"
+    },
+    "tips": {
+      "title": "提示与警告",
+      "backup": "修改前务必备份原始存档文件",
+      "test": "先在副本上测试修改",
+      "verified": "已验证字段：'playerData.geo'（念珠数量）",
+      "syntax": "下载前确保 JSON 语法正确"
+    }
+  },
+  "status": {
+    "ready": "就绪",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功"
+  },
+  "errors": {
+    "fileRead": "无法读取文件",
+    "decode": "解码存档文件失败",
+    "encode": "编码存档文件失败",
+    "invalidJson": "JSON 格式无效",
+    "generic": "发生错误"
+  }
+}
