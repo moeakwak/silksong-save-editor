@@ -116,53 +116,56 @@ export function SaveEditorSidebar({
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {/* Upload Button */}
-            <div>
-              <input
-                type="file"
-                accept=".dat"
-                onChange={handleFileUpload}
-                className="hidden"
-                id="file-upload"
-                disabled={status === 'loading'}
-              />
+            {/* Upload/Clear Toggle Button */}
+            {!hasData ? (
+              <div>
+                <input
+                  type="file"
+                  accept=".dat"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  id="file-upload"
+                  disabled={status === 'loading'}
+                />
+                <Button
+                  asChild
+                  variant="glow"
+                  size="sm"
+                  className="w-full"
+                  disabled={status === 'loading'}
+                >
+                  <label htmlFor="file-upload" className="cursor-pointer">
+                    <Upload className="h-4 w-4" />
+                    {t('sidebar.upload')}
+                  </label>
+                </Button>
+              </div>
+            ) : (
               <Button
-                asChild
-                variant="glow"
+                onClick={onClear}
+                variant="outline"
                 size="sm"
                 className="w-full"
                 disabled={status === 'loading'}
               >
-                <label htmlFor="file-upload" className="cursor-pointer">
-                  <Upload className="h-4 w-4" />
-                  {t('sidebar.upload')}
-                </label>
+                <Trash2 className="h-4 w-4" />
+                {t('sidebar.clear')}
               </Button>
-            </div>
+            )}
 
-            {/* Download Button */}
-            <Button
-              onClick={onDownload}
-              variant="success"
-              size="sm"
-              className="w-full"
-              disabled={!hasData || !isValidJson || status === 'loading'}
-            >
-              <Download className="h-4 w-4" />
-              {t('sidebar.download')}
-            </Button>
-
-            {/* Clear Button */}
-            <Button
-              onClick={onClear}
-              variant="outline"
-              size="sm"
-              className="w-full"
-              disabled={!hasData || status === 'loading'}
-            >
-              <Trash2 className="h-4 w-4" />
-              {t('sidebar.clear')}
-            </Button>
+            {/* Download Button - Only show when data exists */}
+            {hasData && (
+              <Button
+                onClick={onDownload}
+                variant="success"
+                size="sm"
+                className="w-full"
+                disabled={!isValidJson || status === 'loading'}
+              >
+                <Download className="h-4 w-4" />
+                {t('sidebar.download')}
+              </Button>
+            )}
           </CardContent>
         </Card>
 
