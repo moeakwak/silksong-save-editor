@@ -109,14 +109,15 @@
   .silksong-sidebar {
     background-image: 
       linear-gradient(
-        to right, 
-        hsla(var(--sidebar-background), 0.9) 0%,
-        hsla(var(--sidebar-background), 0.95) 70%,
-        hsla(var(--sidebar-background), 1) 100%
+        to bottom, 
+        hsla(var(--sidebar-background), 1) 0%,
+        hsla(var(--sidebar-background), 0.95) 40%,
+        hsla(var(--sidebar-background), 0.85) 70%,
+        hsla(var(--sidebar-background), 0.7) 100%
       ),
       url('/silksong-sidebar.jpg');
-    background-size: cover;
-    background-position: center left;
+    background-size: contain, contain;
+    background-position: center top, center bottom;
     background-repeat: no-repeat;
     background-attachment: local;
   }
