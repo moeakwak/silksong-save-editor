@@ -8,7 +8,8 @@ import {
   FolderOpen,
   CheckCircle2,
   AlertCircle,
-  Info
+  Info,
+  Github
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -98,7 +99,17 @@ export function SaveEditorSidebar({
           
           {/* Controls Row */}
           <div className="flex items-center justify-between gap-2">
-            <LanguageSelector />
+            <div className="flex items-center gap-2">
+              <LanguageSelector />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="p-2 h-8 w-8"
+                onClick={() => window.open('https://github.com/moeakwak/silksong-save-editor', '_blank')}
+              >
+                <Github className="h-4 w-4" />
+              </Button>
+            </div>
             <div className="flex items-center gap-2">
               {getStatusIcon()}
               <Badge variant={status === 'error' ? 'destructive' : status === 'success' ? 'default' : 'secondary'}>
