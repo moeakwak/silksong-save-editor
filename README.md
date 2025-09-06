@@ -1,54 +1,101 @@
-# Welcome to your Lovable project
+# Silksong Save Editor
 
-## Project info
+A professional save file editor for Hollow Knight: Silksong with an intuitive Monaco editor interface. Decode, modify, and encode save files with ease.
 
-**URL**: https://lovable.dev/projects/6b3dfcdd-0b07-47bc-a8d8-82cec95876f9
+## 🎮 Demo
 
-## How can I edit this code?
+Try the live demo: **[https://silksong-save-editor.vercel.com](https://silksong-save-editor.vercel.com)**
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use Lovable**
+- **Professional Monaco Editor**: Syntax highlighting and IntelliSense for JSON editing
+- **Binary Save File Support**: Decode and encode Silksong .dat save files
+- **Multi-language Support**: Available in English and Chinese
+- **Quick Actions**: Instant editing for common save data fields (Rosary Beads/Geo)
+- **Real-time Validation**: JSON syntax validation with error highlighting
+- **Backup Reminders**: Built-in warnings to protect your original save files
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6b3dfcdd-0b07-47bc-a8d8-82cec95876f9) and start prompting.
+## 🚀 Usage
 
-Changes made via Lovable will be committed automatically to this repo.
+### Online (Recommended)
+1. Visit [https://silksong-save-editor.vercel.com](https://silksong-save-editor.vercel.com)
+2. Upload your `user1.dat` save file
+3. Edit the JSON data using the Monaco editor
+4. Download your modified save file
+5. Replace the original file (backup first!)
 
-**Use your preferred IDE**
+### Save File Locations
+- **Windows**: `C:\Users\[Username]\AppData\LocalLow\Team Cherry\Hollow Knight Silksong\`
+- **macOS**: `~/Library/Application Support/unity.Team Cherry.Hollow Knight Silksong/`
+- **Linux**: `~/.config/unity3d/Team Cherry/Hollow Knight Silksong/`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Safety Tips
+- **Always backup your original save files** before making any modifications
+- Test changes on a copy first
+- Ensure JSON syntax is valid before downloading
+- The editor validates common fields like `playerData.geo` (Rosary Beads)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Development
 
-Follow these steps:
+### Prerequisites
+- Node.js 18+ and npm
+- Modern web browser
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+### Local Development
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
+cd silksong-save-editor
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+### Project Structure
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Reusable UI components (shadcn/ui)
+│   ├── MonacoEditor.tsx    # Main editor component
+│   ├── SaveEditorSidebar.tsx # Sidebar with controls
+│   └── ...
+├── i18n/               # Internationalization
+│   └── locales/        # Translation files
+├── utils/              # Utility functions
+│   └── saveDecoder.ts  # Save file encoding/decoding
+└── pages/              # Application pages
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Key Technologies
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **Monaco Editor** - VS Code editor component
+- **Tailwind CSS** - Utility-first styling
+- **shadcn/ui** - High-quality UI components
+- **i18next** - Internationalization framework
+- **CryptoJS** - Cryptographic functions for save file handling
 
-**Use GitHub Codespaces**
+### Contributing
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes and commit: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📝 License
+
+This project is open source and available under the MIT License.
 
 ## What technologies are used for this project?
 
