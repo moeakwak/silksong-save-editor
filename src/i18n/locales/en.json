@@ -10,7 +10,14 @@
     "clear": "Clear Editor",
     "language": "Language",
     "help": "Help & Guide",
-    "saveLocations": "Save File Locations"
+    "saveLocations": "Save File Locations",
+    "quickActions": "Quick Actions"
+  },
+  "quickActions": {
+    "rosaryBeads": "Rosary Beads",
+    "rosaryBeadsDesc": "Current rosary bead count (playerData.geo)",
+    "enterAmount": "Enter amount",
+    "fieldUnavailable": "Field not available in current save data"
   },
   "upload": {
     "button": "Choose Save File",

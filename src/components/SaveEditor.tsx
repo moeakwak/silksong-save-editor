@@ -101,6 +101,36 @@ export function SaveEditor() {
     setIsValidJson(valid);
   }, []);
 
+  const handleFieldUpdate = useCallback((path: string, value: any) => {
+    try {
+      // Parse current JSON content
+      const currentData = JSON.parse(jsonContent);
+      
+      // Update the field using path (e.g., "playerData.geo")
+      const pathParts = path.split('.');
+      let target = currentData;
+      
+      // Navigate to the parent object
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        if (target[pathParts[i]] === undefined) {
+          target[pathParts[i]] = {};
+        }
+        target = target[pathParts[i]];
+      }
+      
+      // Set the final value
+      target[pathParts[pathParts.length - 1]] = value;
+      
+      // Update the JSON content
+      const updatedJson = JSON.stringify(currentData, null, 2);
+      setJsonContent(updatedJson);
+      setSaveData(currentData);
+      
+    } catch (error) {
+      console.error('Error updating field:', error);
+    }
+  }, [jsonContent]);
+
   return (
     <div className="h-screen w-screen flex bg-background">
       {/* Sidebar - 1/4 width */}
@@ -112,6 +142,8 @@ export function SaveEditor() {
           hasData={!!saveData}
           isValidJson={isValidJson}
           status={status}
+          saveData={saveData}
+          onUpdateField={handleFieldUpdate}
         />
       </div>
 

@@ -10,7 +10,14 @@
     "clear": "清除编辑器",
     "language": "语言",
     "help": "帮助与指南",
-    "saveLocations": "存档文件位置"
+    "saveLocations": "存档文件位置",
+    "quickActions": "快捷操作"
+  },
+  "quickActions": {
+    "rosaryBeads": "念珠数量",
+    "rosaryBeadsDesc": "当前念珠数量 (playerData.geo)",
+    "enterAmount": "输入数量",
+    "fieldUnavailable": "当前存档数据中该字段不可用"
   },
   "upload": {
     "button": "选择存档文件",

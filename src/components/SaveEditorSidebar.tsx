@@ -4,7 +4,6 @@ import {
   Upload, 
   Download, 
   Trash2, 
-  Globe, 
   HelpCircle, 
   FolderOpen,
   CheckCircle2,
@@ -20,6 +19,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import { LanguageSelector } from './LanguageSelector';
+import { QuickActions } from './QuickActions';
 
 interface SaveEditorSidebarProps {
   onUpload: (file: File) => void;
@@ -28,6 +29,8 @@ interface SaveEditorSidebarProps {
   hasData: boolean;
   isValidJson: boolean;
   status: 'idle' | 'loading' | 'success' | 'error';
+  saveData: any;
+  onUpdateField: (path: string, value: any) => void;
 }
 
 export function SaveEditorSidebar({
@@ -36,9 +39,11 @@ export function SaveEditorSidebar({
   onClear,
   hasData,
   isValidJson,
-  status
+  status,
+  saveData,
+  onUpdateField
 }: SaveEditorSidebarProps) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
 
@@ -47,11 +52,6 @@ export function SaveEditorSidebar({
     if (file) {
       onUpload(file);
     }
-  };
-
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'zh' : 'en';
-    i18n.changeLanguage(newLang);
   };
 
   const getStatusIcon = () => {
@@ -82,11 +82,14 @@ export function SaveEditorSidebar({
 
   return (
     <div className="w-full h-full bg-gradient-bg border-r border-sidebar-border p-4 space-y-6">
-      {/* Header */}
+      {/* Header with Language Selector */}
       <div className="space-y-2">
-        <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          {t('app.title')}
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            {t('app.title')}
+          </h1>
+          <LanguageSelector />
+        </div>
         <p className="text-sm text-muted-foreground">
           {t('app.subtitle')}
         </p>
@@ -161,20 +164,13 @@ export function SaveEditorSidebar({
         </CardContent>
       </Card>
 
-      {/* Language Toggle */}
-      <Card>
-        <CardContent className="pt-6">
-          <Button
-            onClick={toggleLanguage}
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start"
-          >
-            <Globe className="h-4 w-4" />
-            {t('sidebar.language')}: {i18n.language === 'en' ? 'English' : '中文'}
-          </Button>
-        </CardContent>
-      </Card>
+      {/* Quick Actions */}
+      {hasData && (
+        <QuickActions 
+          saveData={saveData}
+          onUpdateField={onUpdateField}
+        />
+      )}
 
       {/* Help Section */}
       <Card>
