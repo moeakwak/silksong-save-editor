@@ -62,6 +62,17 @@
       "syntax": "下载前确保 JSON 语法正确"
     }
   },
+  "upload": {
+    "title": "上传丝之歌存档文件",
+    "description": "点击这里或拖拽你的 user1.dat 文件到此处开始编辑",
+    "dropHere": "释放以上传你的存档文件",
+    "button": "选择存档文件", 
+    "formatNote": "仅支持 .dat 格式文件",
+    "loading": "正在处理存档文件...",
+    "processing": "正在解码和解析你的存档数据...",
+    "success": "存档文件加载成功！",
+    "error": "加载存档文件失败，请检查文件格式。"
+  },
   "status": {
     "ready": "就绪",
     "loading": "加载中...",

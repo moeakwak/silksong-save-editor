@@ -20,9 +20,13 @@
     "fieldUnavailable": "Field not available in current save data"
   },
   "upload": {
-    "button": "Choose Save File",
-    "dropzone": "Drop your save file here or click to browse",
-    "processing": "Processing file...",
+    "title": "Upload Silksong Save File",
+    "description": "Click here or drag and drop your user1.dat file to start editing",
+    "dropHere": "Release to upload your save file",
+    "button": "Select Save File",
+    "formatNote": "Supports .dat files only",
+    "loading": "Processing Save File...",
+    "processing": "Decoding and parsing your save data...",
     "success": "Save file loaded successfully!",
     "error": "Failed to load save file. Please check the file format."
   },
