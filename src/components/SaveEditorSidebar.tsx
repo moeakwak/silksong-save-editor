@@ -11,8 +11,6 @@ import {
   Info
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { 
   Collapsible,
@@ -108,14 +106,12 @@ export function SaveEditorSidebar({
       {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
         {/* File Operations */}
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium flex items-center gap-2">
-              <FolderOpen className="h-4 w-4" />
-              {t('sidebar.fileOperations')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
+        <div className="pb-4 border-b border-border">
+          <h3 className="text-sm font-medium flex items-center gap-2 mb-3">
+            <FolderOpen className="h-4 w-4" />
+            {t('sidebar.fileOperations')}
+          </h3>
+          <div className="space-y-3">
             {/* Upload/Clear Toggle Button */}
             {!hasData ? (
               <div>
@@ -166,8 +162,8 @@ export function SaveEditorSidebar({
                 {t('sidebar.download')}
               </Button>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Quick Actions */}
         {hasData && (
@@ -178,14 +174,12 @@ export function SaveEditorSidebar({
         )}
 
         {/* Help Section */}
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium flex items-center gap-2">
-              <HelpCircle className="h-4 w-4" />
-              {t('sidebar.help')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
+        <div className="pb-4 border-b border-border">
+          <h3 className="text-sm font-medium flex items-center gap-2 mb-3">
+            <HelpCircle className="h-4 w-4" />
+            {t('sidebar.help')}
+          </h3>
+          <div className="space-y-3">
             {/* Save Locations */}
             <Collapsible open={isLocationsOpen} onOpenChange={setIsLocationsOpen}>
               <CollapsibleTrigger asChild>
@@ -251,28 +245,26 @@ export function SaveEditorSidebar({
                 </div>
               </CollapsibleContent>
             </Collapsible>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* JSON Validation Status */}
         {hasData && (
-          <Card>
-            <CardContent className="pt-4">
-              <div className="flex items-center gap-2 text-sm">
-                {isValidJson ? (
-                  <>
-                    <CheckCircle2 className="h-4 w-4 text-success" />
-                    <span className="text-success">{t('editor.valid')}</span>
-                  </>
-                ) : (
-                  <>
-                    <AlertCircle className="h-4 w-4 text-destructive" />
-                    <span className="text-destructive">{t('editor.invalid')}</span>
-                  </>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+          <div>
+            <div className="flex items-center gap-2 text-sm">
+              {isValidJson ? (
+                <>
+                  <CheckCircle2 className="h-4 w-4 text-success" />
+                  <span className="text-success">{t('editor.valid')}</span>
+                </>
+              ) : (
+                <>
+                  <AlertCircle className="h-4 w-4 text-destructive" />
+                  <span className="text-destructive">{t('editor.invalid')}</span>
+                </>
+              )}
+            </div>
+          </div>
         )}
       </div>
     </div>
