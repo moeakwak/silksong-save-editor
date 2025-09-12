@@ -278,6 +278,7 @@ export function SaveEditorSidebar({
                     <p className="text-[10px]">• {t('help.tips.test')}</p>
                     <p className="text-[10px] text-success">• {t('help.tips.verified')}</p>
                     <p className="text-[10px]">• {t('help.tips.syntax')}</p>
+                    <p className="text-[10px]">• {t('help.tips.exitGame')}</p>
                   </div>
                 </div>
               </CollapsibleContent>

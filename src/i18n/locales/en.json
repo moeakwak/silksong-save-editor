@@ -71,7 +71,8 @@
       "backup": "Always backup your original save file before making changes",
       "test": "Test modifications on a copy first",
       "verified": "Verified field: 'playerData.geo' (Rosary Beads count)",
-      "syntax": "Ensure JSON syntax is valid before downloading"
+      "syntax": "Ensure JSON syntax is valid before downloading",
+      "exitGame": "Completely exit the game before replacing the save file"
     }
   },
   "status": {

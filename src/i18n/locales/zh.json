@@ -27,13 +27,6 @@
     "enterAmount": "输入数量",
     "fieldUnavailable": "当前存档数据中该字段不可用"
   },
-  "upload": {
-    "button": "选择存档文件",
-    "dropzone": "将存档文件拖放到此处或点击浏览",
-    "processing": "正在处理文件...",
-    "success": "存档文件加载成功！",
-    "error": "加载存档文件失败，请检查文件格式。"
-  },
   "download": {
     "button": "下载存档",
     "filename": "modified.dat",
@@ -67,14 +60,15 @@
       "backup": "修改前务必备份原始存档文件",
       "test": "先在副本上测试修改",
       "verified": "已验证字段：'playerData.geo'（念珠数量）",
-      "syntax": "下载前确保 JSON 语法正确"
+      "syntax": "下载前确保 JSON 语法正确",
+      "exitGame": "在替换存档前，完全退出游戏"
     }
   },
   "upload": {
     "title": "上传丝之歌存档文件",
     "description": "点击这里或拖拽你的 .dat 文件到此处开始编辑",
     "dropHere": "释放以上传你的存档文件",
-    "button": "选择存档文件", 
+    "button": "选择存档文件",
     "formatNote": "仅支持 .dat 格式文件",
     "loading": "正在处理存档文件...",
     "processing": "正在解码和解析你的存档数据...",
