@@ -35,7 +35,7 @@
     "greatShard": "大型碎骨片包",
     "greatShardDesc": "大型碎骨片包 (增加200个碎骨片)",
     "enterAmount": "输入数量",
-    "uploadFileFirst": "请先上传存档文件以启用编辑功能",
+    "uploadFileFirst": "请先上传存档文件以启用编辑功能"
   },
   "download": {
     "button": "下载存档",
