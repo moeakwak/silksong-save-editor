@@ -31,9 +31,9 @@
     "memoryLocket": "Memory Locket",
     "memoryLocketDesc": "Crest Socket Unlocker item count",
     "largeRosary": "Large Rosary Set",
-    "largeRosaryDesc": "Large rosary set item count",
-    "greatShard": "Great Shard",
-    "greatShardDesc": "Great Shard item count",
+    "largeRosaryDesc": "Large rosary set (adds 220 rosary beads)",
+    "greatShard": "Great Bone Shard Pack",
+    "greatShardDesc": "Great bone shard pack (adds 200 bone fragments)",
     "enterAmount": "Enter amount",
     "fieldUnavailable": "Field not available in current save data"
   },
