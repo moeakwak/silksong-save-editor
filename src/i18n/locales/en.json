@@ -35,7 +35,7 @@
     "greatShard": "Great Bone Shard Pack",
     "greatShardDesc": "Great bone shard pack (adds 200 bone fragments)",
     "enterAmount": "Enter amount",
-    "fieldUnavailable": "Field not available in current save data"
+    "uploadFileFirst": "Please upload a save file first to enable editing",
   },
   "upload": {
     "title": "Upload Silksong Save File",

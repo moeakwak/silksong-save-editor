@@ -43,6 +43,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
   const hasGreatShard = greatShardItem?.Data?.Amount !== undefined;
   const currentGreatShard = hasGreatShard ? greatShardItem.Data.Amount : 0;
 
+  // Check if we have any save data at all
+  const hasAnyData = !!saveData;
+
   // Update local state when save data changes
   useEffect(() => {
     setRosaryBeads(hasRosaryField ? currentRosaryValue.toString() : '');
@@ -66,14 +69,14 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
 
   // Handle infinite jump toggle
   const handleInfiniteJumpChange = (checked: boolean) => {
-    if (hasInfiniteJump) {
+    if (hasInfiniteJump && hasAnyData) {
       onUpdateField('playerData.infiniteAirJump', checked);
     }
   };
 
   // Helper to update collectable amount
   const updateCollectableAmount = (itemName: string, amount: number) => {
-    if (!saveData?.playerData?.Collectables?.savedData) return;
+    if (!saveData?.playerData?.Collectables?.savedData || !hasAnyData) return;
     
     const itemIndex = saveData.playerData.Collectables.savedData.findIndex((item: any) => item.Name === itemName);
     if (itemIndex !== -1) {
@@ -111,7 +114,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
               id="infinite-jump"
               checked={currentInfiniteJump}
               onCheckedChange={handleInfiniteJumpChange}
-              disabled={!hasInfiniteJump}
+              disabled={!hasInfiniteJump || !hasAnyData}
             />
             <span className="text-xs text-muted-foreground">
               {currentInfiniteJump ? t('quickActions.enabled') : t('quickActions.disabled')}
@@ -119,9 +122,11 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           </div>
           
           <p className="text-xs text-muted-foreground">
-            {hasInfiniteJump 
+            {hasInfiniteJump && hasAnyData
               ? t('quickActions.infiniteJumpDesc')
-              : t('quickActions.fieldUnavailable')
+              : !hasAnyData 
+                ? t('quickActions.uploadFileFirst')
+                : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -148,16 +153,18 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
             type="number"
             min="0"
             value={rosaryBeads}
-            onChange={(e) => handleNumberChange(e.target.value, setRosaryBeads, 'playerData.geo', hasRosaryField)}
+            onChange={(e) => handleNumberChange(e.target.value, setRosaryBeads, 'playerData.geo', hasRosaryField && hasAnyData)}
             placeholder={t('quickActions.enterAmount')}
-            disabled={!hasRosaryField}
+            disabled={!hasRosaryField || !hasAnyData}
             className="h-8 text-sm"
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasRosaryField 
+            {hasRosaryField && hasAnyData
               ? t('quickActions.rosaryBeadsDesc')
-              : t('quickActions.fieldUnavailable')
+              : !hasAnyData 
+                ? t('quickActions.uploadFileFirst')
+                : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -187,8 +194,8 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
             value={memoryLocket}
             onChange={(e) => {
               const value = e.target.value;
-              handleNumberChange(value, setMemoryLocket, '', hasMemoryLocket);
-              if (value !== '' && hasMemoryLocket) {
+              handleNumberChange(value, setMemoryLocket, '', hasMemoryLocket && hasAnyData);
+              if (value !== '' && hasMemoryLocket && hasAnyData) {
                 const numericValue = parseInt(value, 10);
                 if (!isNaN(numericValue) && numericValue >= 0) {
                   updateCollectableAmount('Crest Socket Unlocker', numericValue);
@@ -196,14 +203,16 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
               }
             }}
             placeholder={t('quickActions.enterAmount')}
-            disabled={!hasMemoryLocket}
+            disabled={!hasMemoryLocket || !hasAnyData}
             className="h-8 text-sm"
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasMemoryLocket 
+            {hasMemoryLocket && hasAnyData
               ? t('quickActions.memoryLocketDesc')
-              : t('quickActions.fieldUnavailable')
+              : !hasAnyData 
+                ? t('quickActions.uploadFileFirst')
+                : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -233,8 +242,8 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
             value={largeRosary}
             onChange={(e) => {
               const value = e.target.value;
-              handleNumberChange(value, setLargeRosary, '', hasLargeRosary);
-              if (value !== '' && hasLargeRosary) {
+              handleNumberChange(value, setLargeRosary, '', hasLargeRosary && hasAnyData);
+              if (value !== '' && hasLargeRosary && hasAnyData) {
                 const numericValue = parseInt(value, 10);
                 if (!isNaN(numericValue) && numericValue >= 0) {
                   updateCollectableAmount('Rosary_Set_Large', numericValue);
@@ -242,14 +251,16 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
               }
             }}
             placeholder={t('quickActions.enterAmount')}
-            disabled={!hasLargeRosary}
+            disabled={!hasLargeRosary || !hasAnyData}
             className="h-8 text-sm"
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasLargeRosary 
+            {hasLargeRosary && hasAnyData
               ? t('quickActions.largeRosaryDesc')
-              : t('quickActions.fieldUnavailable')
+              : !hasAnyData 
+                ? t('quickActions.uploadFileFirst')
+                : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -279,8 +290,8 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
             value={greatShard}
             onChange={(e) => {
               const value = e.target.value;
-              handleNumberChange(value, setGreatShard, '', hasGreatShard);
-              if (value !== '' && hasGreatShard) {
+              handleNumberChange(value, setGreatShard, '', hasGreatShard && hasAnyData);
+              if (value !== '' && hasGreatShard && hasAnyData) {
                 const numericValue = parseInt(value, 10);
                 if (!isNaN(numericValue) && numericValue >= 0) {
                   updateCollectableAmount('Great Shard', numericValue);
@@ -288,14 +299,16 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
               }
             }}
             placeholder={t('quickActions.enterAmount')}
-            disabled={!hasGreatShard}
+            disabled={!hasGreatShard || !hasAnyData}
             className="h-8 text-sm"
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasGreatShard 
+            {hasGreatShard && hasAnyData
               ? t('quickActions.greatShardDesc')
-              : t('quickActions.fieldUnavailable')
+              : !hasAnyData 
+                ? t('quickActions.uploadFileFirst')
+                : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>

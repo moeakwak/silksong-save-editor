@@ -373,7 +373,8 @@ export function HelpGuide() {
   const isEnglish = i18n.language === 'en';
   
   return (
-    <div className="h-full overflow-y-auto p-6 prose prose-sm dark:prose-invert max-w-none">
+    <div className="h-full overflow-y-auto p-6 prose prose-sm dark:prose-invert max-w-none prose-headings:scroll-mt-4">
+      <div className="pb-8">
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]}
         components={{
@@ -409,6 +410,7 @@ export function HelpGuide() {
       >
         {isEnglish ? englishContent : chineseContent}
       </ReactMarkdown>
+      </div>
     </div>
   );
 }

@@ -194,13 +194,11 @@ export function SaveEditorSidebar({
           </div>
         </div>
 
-        {/* Quick Actions */}
-        {hasData && (
-          <QuickActions 
-            saveData={saveData}
-            onUpdateField={onUpdateField}
-          />
-        )}
+        {/* Quick Actions - Always visible */}
+        <QuickActions 
+          saveData={saveData}
+          onUpdateField={onUpdateField}
+        />
 
         {/* JSON Validation Status */}
         {hasData && (
