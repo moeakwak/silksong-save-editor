@@ -86,9 +86,16 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
 
   return (
     <div className="pb-4 border-b border-border">
-      <h3 className="text-sm font-medium flex items-center gap-2 mb-3">
-        <Coins className="h-4 w-4 text-primary" />
-        {t('sidebar.quickActions')}
+      <h3 className="text-sm font-medium flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <Coins className="h-4 w-4 text-primary" />
+          {t('sidebar.quickActions')}
+        </div>
+        {!hasAnyData && (
+          <Badge variant="outline" className="text-xs">
+            {t('quickActions.uploadFileFirst')}
+          </Badge>
+        )}
       </h3>
       <div className="space-y-4">
         {/* Infinite Air Jump Toggle */}
@@ -122,11 +129,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           </div>
           
           <p className="text-xs text-muted-foreground">
-            {hasInfiniteJump && hasAnyData
+            {hasInfiniteJump
               ? t('quickActions.infiniteJumpDesc')
-              : !hasAnyData 
-                ? t('quickActions.uploadFileFirst')
-                : t('quickActions.fieldUnavailable')
+              : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -160,11 +165,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasRosaryField && hasAnyData
+            {hasRosaryField
               ? t('quickActions.rosaryBeadsDesc')
-              : !hasAnyData 
-                ? t('quickActions.uploadFileFirst')
-                : t('quickActions.fieldUnavailable')
+              : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -208,11 +211,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasMemoryLocket && hasAnyData
+            {hasMemoryLocket
               ? t('quickActions.memoryLocketDesc')
-              : !hasAnyData 
-                ? t('quickActions.uploadFileFirst')
-                : t('quickActions.fieldUnavailable')
+              : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -256,11 +257,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasLargeRosary && hasAnyData
+            {hasLargeRosary
               ? t('quickActions.largeRosaryDesc')
-              : !hasAnyData 
-                ? t('quickActions.uploadFileFirst')
-                : t('quickActions.fieldUnavailable')
+              : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>
@@ -304,11 +303,9 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasGreatShard && hasAnyData
+            {hasGreatShard
               ? t('quickActions.greatShardDesc')
-              : !hasAnyData 
-                ? t('quickActions.uploadFileFirst')
-                : t('quickActions.fieldUnavailable')
+              : t('quickActions.fieldUnavailable')
             }
           </p>
         </div>

@@ -40,7 +40,7 @@ export function EditorTabs({
           </TabsTrigger>
         </TabsList>
         
-        <TabsContent value="editor" className="flex-1 m-0 mt-4">
+        <TabsContent value="editor" className="flex-1 m-0 mt-4 overflow-hidden">
           {saveData ? (
             <MonacoEditor
               value={jsonContent}
@@ -57,8 +57,10 @@ export function EditorTabs({
           )}
         </TabsContent>
         
-        <TabsContent value="help" className="flex-1 m-0 mt-4">
-          <HelpGuide />
+        <TabsContent value="help" className="flex-1 m-0 mt-4 overflow-hidden">
+          <div className="h-full">
+            <HelpGuide />
+          </div>
         </TabsContent>
       </Tabs>
     </div>
