@@ -4,7 +4,6 @@ import {
   Upload, 
   Download, 
   Trash2, 
-  HelpCircle, 
   FolderOpen,
   CheckCircle2,
   AlertCircle,
@@ -13,11 +12,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible';
 import { LanguageSelector } from './LanguageSelector';
 import { QuickActions } from './QuickActions';
 
@@ -47,8 +41,6 @@ export function SaveEditorSidebar({
   onUpdateField
 }: SaveEditorSidebarProps) {
   const { t } = useTranslation();
-  const [isHelpOpen, setIsHelpOpen] = useState(false);
-  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -209,82 +201,6 @@ export function SaveEditorSidebar({
             onUpdateField={onUpdateField}
           />
         )}
-
-        {/* Help Section */}
-        <div className="pb-4 border-b border-border">
-          <h3 className="text-sm font-medium flex items-center gap-2 mb-3">
-            <HelpCircle className="h-4 w-4" />
-            {t('sidebar.help')}
-          </h3>
-          <div className="space-y-3">
-            {/* Save Locations */}
-            <Collapsible open={isLocationsOpen} onOpenChange={setIsLocationsOpen}>
-              <CollapsibleTrigger asChild>
-                <Button variant="ghost" size="sm" className="w-full justify-between">
-                  {t('sidebar.saveLocations')}
-                  <span className={`transform transition-transform ${isLocationsOpen ? 'rotate-180' : ''}`}>
-                    ▼
-                  </span>
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-2 mt-2">
-                <div className="text-xs space-y-3 p-3 bg-muted/50 rounded-md">
-                  <div>
-                    <strong className="text-foreground">{t('help.locations.macos')}:</strong>
-                    <code className="block mt-1 text-[10px] bg-background p-1 rounded">
-                      ~/Library/Application Support/unity.Team-Cherry.Silksong/{'{SteamID}'}/user1.dat
-                    </code>
-                  </div>
-                  <div>
-                    <strong className="text-foreground">{t('help.locations.windows')}:</strong>
-                    <code className="block mt-1 text-[10px] bg-background p-1 rounded">
-                      %USERPROFILE%/AppData/LocalLow/Team Cherry/Hollow Knight Silksong/{'{SteamID}'}/user1.dat
-                    </code>
-                  </div>
-                  <div>
-                    <strong className="text-foreground">{t('help.locations.linux')}:</strong>
-                    <code className="block mt-1 text-[10px] bg-background p-1 rounded">
-                      ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/{'{SteamID}'}/user1.dat
-                    </code>
-                  </div>
-                  <p className="text-warning text-[10px] italic">
-                    {t('help.locations.note')}
-                  </p>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
-
-            {/* Usage Guide */}
-            <Collapsible open={isHelpOpen} onOpenChange={setIsHelpOpen}>
-              <CollapsibleTrigger asChild>
-                <Button variant="ghost" size="sm" className="w-full justify-between">
-                  {t('help.usage.title')}
-                  <span className={`transform transition-transform ${isHelpOpen ? 'rotate-180' : ''}`}>
-                    ▼
-                  </span>
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-2 mt-2">
-                <div className="text-xs space-y-2 p-3 bg-muted/50 rounded-md">
-                  <p>{t('help.usage.step1')}</p>
-                  <p>{t('help.usage.step2')}</p>
-                  <p>{t('help.usage.step3')}</p>
-                  <p>{t('help.usage.step4')}</p>
-                  <p>{t('help.usage.step5')}</p>
-                  
-                  <div className="mt-3 pt-2 border-t border-border">
-                    <p className="font-medium text-warning text-[10px] mb-1">{t('help.tips.title')}</p>
-                    <p className="text-[10px]">• {t('help.tips.backup')}</p>
-                    <p className="text-[10px]">• {t('help.tips.test')}</p>
-                    <p className="text-[10px] text-success">• {t('help.tips.verified')}</p>
-                    <p className="text-[10px]">• {t('help.tips.syntax')}</p>
-                    <p className="text-[10px]">• {t('help.tips.exitGame')}</p>
-                  </div>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
-          </div>
-        </div>
 
         {/* JSON Validation Status */}
         {hasData && (

@@ -1,8 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SaveEditorSidebar } from './SaveEditorSidebar';
-import { MonacoEditor } from './MonacoEditor';
-import { UploadZone } from './UploadZone';
+import { EditorTabs } from './EditorTabs';
 import { decodeSilksongSave, encodeSilksongSave, downloadFile } from '@/utils/saveDecoder';
 import { useToast } from '@/hooks/use-toast';
 
@@ -180,18 +179,14 @@ export function SaveEditor() {
 
       {/* Right Panel - 3/4 width */}
       <div className="flex-1 h-full overflow-hidden">
-        {saveData ? (
-          <MonacoEditor
-            value={jsonContent}
-            onChange={handleJsonChange}
-            onValidationChange={handleValidationChange}
-          />
-        ) : (
-          <UploadZone 
-            onFileUpload={handleFileUpload}
-            status={status}
-          />
-        )}
+        <EditorTabs
+          saveData={saveData}
+          jsonContent={jsonContent}
+          onJsonChange={handleJsonChange}
+          onValidationChange={handleValidationChange}
+          onFileUpload={handleFileUpload}
+          status={status}
+        />
       </div>
     </div>
   );

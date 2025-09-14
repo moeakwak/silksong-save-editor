@@ -1,7 +1,7 @@
 {
-  "app": {
-    "title": "Silksong Save Editor",
-    "subtitle": "A professional save file editor for Hollow Knight: Silksong"
+  "tabs": {
+    "jsonEditor": "JSON Editor",
+    "userGuide": "User Guide"
   },
   "sidebar": {
     "fileOperations": "File Operations",
