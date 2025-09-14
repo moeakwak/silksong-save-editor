@@ -129,10 +129,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           </div>
           
           <p className="text-xs text-muted-foreground">
-            {hasInfiniteJump
-              ? t('quickActions.infiniteJumpDesc')
-              : t('quickActions.fieldUnavailable')
-            }
+            {t('quickActions.infiniteJumpDesc')}
           </p>
         </div>
 
@@ -165,10 +162,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasRosaryField
-              ? t('quickActions.rosaryBeadsDesc')
-              : t('quickActions.fieldUnavailable')
-            }
+            {t('quickActions.rosaryBeadsDesc')}
           </p>
         </div>
 
@@ -211,10 +205,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasMemoryLocket
-              ? t('quickActions.memoryLocketDesc')
-              : t('quickActions.fieldUnavailable')
-            }
+            {t('quickActions.memoryLocketDesc')}
           </p>
         </div>
 
@@ -257,10 +248,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasLargeRosary
-              ? t('quickActions.largeRosaryDesc')
-              : t('quickActions.fieldUnavailable')
-            }
+            {t('quickActions.largeRosaryDesc')}
           </p>
         </div>
 
@@ -303,10 +291,7 @@ export function QuickActions({ saveData, onUpdateField }: QuickActionsProps) {
           />
           
           <p className="text-xs text-muted-foreground">
-            {hasGreatShard
-              ? t('quickActions.greatShardDesc')
-              : t('quickActions.fieldUnavailable')
-            }
+            {t('quickActions.greatShardDesc')}
           </p>
         </div>
       </div>
