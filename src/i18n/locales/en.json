@@ -22,8 +22,18 @@
     }
   },
   "quickActions": {
+    "infiniteJump": "Infinite Air Jump",
+    "infiniteJumpDesc": "Enable unlimited air jumps (playerData.infiniteAirJump)",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
     "rosaryBeads": "Rosary Beads",
     "rosaryBeadsDesc": "Current rosary bead count (playerData.geo)",
+    "memoryLocket": "Memory Locket",
+    "memoryLocketDesc": "Crest Socket Unlocker item count",
+    "largeRosary": "Large Rosary Set",
+    "largeRosaryDesc": "Large rosary set item count",
+    "greatShard": "Great Shard",
+    "greatShardDesc": "Great Shard item count",
     "enterAmount": "Enter amount",
     "fieldUnavailable": "Field not available in current save data"
   },

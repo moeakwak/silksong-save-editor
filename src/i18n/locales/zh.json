@@ -22,8 +22,18 @@
     }
   },
   "quickActions": {
+    "infiniteJump": "无限跳跃",
+    "infiniteJumpDesc": "启用无限空中跳跃 (playerData.infiniteAirJump)",
+    "enabled": "已启用",
+    "disabled": "已禁用",
     "rosaryBeads": "念珠数量",
     "rosaryBeadsDesc": "当前念珠数量 (playerData.geo)",
+    "memoryLocket": "忆境纪念盒",
+    "memoryLocketDesc": "增殖孔位解锁器物品数量",
+    "largeRosary": "大型念珠串",
+    "largeRosaryDesc": "大型念珠串物品数量",
+    "greatShard": "大型碎片",
+    "greatShardDesc": "大型碎片物品数量",
     "enterAmount": "输入数量",
     "fieldUnavailable": "当前存档数据中该字段不可用"
   },
