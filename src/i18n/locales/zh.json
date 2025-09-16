@@ -22,6 +22,10 @@
     }
   },
   "quickActions": {
+    "tabs": {
+      "general": "通用",
+      "items": "道具"
+    },
     "infiniteJump": "无限跳跃",
     "infiniteJumpDesc": "启用无限空中跳跃 (playerData.infiniteAirJump)",
     "enabled": "已启用",
@@ -34,6 +38,8 @@
     "largeRosaryDesc": "大型念珠串 (能增加220个念珠)",
     "greatShard": "大型碎骨片包",
     "greatShardDesc": "大型碎骨片包 (增加200个碎骨片)",
+    "toolMetal": "制造金属",
+    "toolMetalDesc": "用于制造工具和装备的金属材料",
     "enterAmount": "输入数量",
     "uploadFileFirst": "请先上传存档文件以启用编辑功能"
   },

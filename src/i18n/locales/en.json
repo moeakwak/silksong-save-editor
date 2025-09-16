@@ -22,6 +22,10 @@
     }
   },
   "quickActions": {
+    "tabs": {
+      "general": "General",
+      "items": "Items"
+    },
     "infiniteJump": "Infinite Air Jump",
     "infiniteJumpDesc": "Enable unlimited air jumps (playerData.infiniteAirJump)",
     "enabled": "Enabled",
@@ -34,6 +38,8 @@
     "largeRosaryDesc": "Large rosary set (adds 220 rosary beads)",
     "greatShard": "Great Bone Shard Pack",
     "greatShardDesc": "Great bone shard pack (adds 200 bone fragments)",
+    "toolMetal": "Crafting Metal",
+    "toolMetalDesc": "Metal material for crafting tools and equipment",
     "enterAmount": "Enter amount",
     "uploadFileFirst": "Please upload a save file first to enable editing"
   },
